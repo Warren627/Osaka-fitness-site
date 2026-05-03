@@ -5,14 +5,14 @@
 // =============================================================================
 
 import { useParams } from "wouter";
-import TopBar from "@/components/TopBar";
-import BottomNav from "@/components/BottomNav";
-import EquipmentCard from "@/components/EquipmentCard";
-import DietRecommendation from "@/components/DietRecommendation";
-import { getPlanById, getEquipmentForPlan, getDietRecommendation } from "@/lib/data";
+import TopBar from "../components/TopBar";
+import BottomNav from "../components/BottomNav";
+import EquipmentCard from "../components/EquipmentCard";
+import DietRecommendation from "../components/DietRecommendation";
+import { getPlanById, getEquipmentForPlan, getDietRecommendation } from "../lib/data";
 import { Clock, Dumbbell } from "lucide-react";
 import { useLocation } from "wouter";
-import { planMuscleIconMap } from "@/components/MuscleIcon";
+import { planMuscleIconMap } from "../components/MuscleIcon";
 
 const planBgColors: Record<string, string> = {
   "chest-triceps": "oklch(0.65 0.18 25)",
