@@ -4,15 +4,15 @@
 // =============================================================================
 
 import { useState } from "react";
-import TopBar from "@/components/TopBar";
-import BottomNav from "@/components/BottomNav";
-import EquipmentCard from "@/components/EquipmentCard";
+import TopBar from "../components/TopBar";
+import BottomNav from "../components/BottomNav";
+import EquipmentCard from "../components/EquipmentCard";
 import {
   muscleCategories,
   getEquipmentByCategory,
   equipmentList,
   type MuscleGroup,
-} from "@/lib/data";
+} from "../lib/data";
 import { Search } from "lucide-react";
 
 export default function Library() {
