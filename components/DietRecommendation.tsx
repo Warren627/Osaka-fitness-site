@@ -5,7 +5,7 @@
 // =============================================================================
 
 import { useState } from "react";
-import { DietRecommendation as DietRecommendationType, DietPlanType } from "@/lib/data";
+import { DietRecommendation as DietRecommendationType, DietPlanType } from "../lib/data";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface DietRecommendationProps {
