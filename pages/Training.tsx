@@ -5,10 +5,10 @@
 
 import { Link } from "wouter";
 import { ChevronRight, Clock, Dumbbell, Flame } from "lucide-react";
-import TopBar from "@/components/TopBar";
-import BottomNav from "@/components/BottomNav";
-import { trainingPlans, getEquipmentForPlan } from "@/lib/data";
-import { planMuscleIconMap } from "@/components/MuscleIcon";
+import TopBar from "../components/TopBar";
+import BottomNav from "../components/BottomNav";
+import { trainingPlans, getEquipmentForPlan } from "../lib/data";
+import { planMuscleIconMap } from "../components/MuscleIcon";
 
 const planBgColors: Record<string, string> = {
   "chest-triceps": "oklch(0.65 0.18 25)",
