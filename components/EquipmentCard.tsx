@@ -3,9 +3,9 @@
 // 设计：黑金风格，极简 SVG 图标 + 名称 + 部位标签，无图片
 // =============================================================================
 
-import { Equipment } from "@/lib/data";
+import { Equipment } from "../lib/data";
 import { Link } from "wouter";
-import { equipmentIconMap } from "@/components/EquipmentIcon";
+import { equipmentIconMap } from "./EquipmentIcon";
 import { ChevronRight } from "lucide-react";
 
 interface EquipmentCardProps {
