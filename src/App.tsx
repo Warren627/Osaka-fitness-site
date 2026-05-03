@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import Training from "../pages/Training";
 import TrainingDetail from "../pages/TrainingDetail";
 import Library from "../pages/Library";
-import EquipmentDetail from "../pages/EquipmentDetail";
+import EquipmentDetail from "../components/EquipmentDetail";
 
 function Router() {
   return (
