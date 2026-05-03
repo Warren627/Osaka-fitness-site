@@ -5,7 +5,7 @@
 
 import { Link } from "wouter";
 import { ChevronRight, Zap, Dumbbell } from "lucide-react";
-import BottomNav from "@/components/BottomNav";
+import BottomNav from "../components/BottomNav";
 
 // 今日日期
 const today = new Date();
