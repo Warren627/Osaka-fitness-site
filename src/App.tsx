@@ -1,9 +1,10 @@
 import { Route, Switch } from "wouter";
-import Home from "./pages/Home";
-import Training from "./pages/Training";
-import TrainingDetail from "./pages/TrainingDetail";
-import Library from "./pages/Library";
-import EquipmentDetail from "./pages/EquipmentDetail";
+
+import Home from "../pages/Home";
+import Training from "../pages/Training";
+import TrainingDetail from "../pages/TrainingDetail";
+import Library from "../pages/Library";
+import EquipmentDetail from "../pages/EquipmentDetail";
 
 function Router() {
   return (
