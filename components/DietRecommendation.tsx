@@ -6,7 +6,7 @@
 
 import { useState } from "react";
 import { DietRecommendation as DietRecommendationType, DietPlanType } from "../lib/data";
-
+import { motion } from "framer-motion";
 
 interface DietRecommendationProps {
   recommendation: DietRecommendationType;
