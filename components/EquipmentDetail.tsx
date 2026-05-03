@@ -4,9 +4,9 @@
 // =============================================================================
 
 import { useParams, useLocation } from "wouter";
-import { getEquipmentById } from "@/lib/data";
+import { getEquipmentById } from "../lib/data";
 import { ChevronLeft, Target, AlertTriangle, BarChart3, Zap } from "lucide-react";
-import { equipmentIconMap } from "@/components/EquipmentIcon";
+import { equipmentIconMap } from "../components/EquipmentIcon";
 
 const categoryColors: Record<string, string> = {
   胸部: "oklch(0.65 0.18 25)",
