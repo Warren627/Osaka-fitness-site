@@ -1,0 +1,17 @@
+{
+  "name": "osaka-fitness-site",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "wouter": "^2.12.1"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "typescript": "^5.2.2"
+  }
+}
