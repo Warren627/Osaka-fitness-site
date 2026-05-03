@@ -1,0 +1,268 @@
+/* =============================================================================
+   FitPro 全局样式 - 工业暗金风格（Industrial Dark Gold）
+   设计原则：深黑底色 + 金色强调 + 粗体字重 + 卡片玻璃质感
+   ============================================================================= */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-dim: var(--gold-dim);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+}
+
+:root {
+  /* 黑金主题色彩系统 */
+  --background: oklch(0.08 0.005 60);         /* 深黑底色 */
+  --foreground: oklch(0.95 0.01 80);           /* 近白文字 */
+  --card: oklch(0.13 0.008 60);               /* 卡片深灰 */
+  --card-foreground: oklch(0.95 0.01 80);
+  --popover: oklch(0.13 0.008 60);
+  --popover-foreground: oklch(0.95 0.01 80);
+
+  /* 金色主色 */
+  --primary: oklch(0.75 0.14 82);             /* 暖金色 */
+  --primary-foreground: oklch(0.08 0.005 60); /* 深黑（金色按钮上的文字）*/
+
+  --secondary: oklch(0.18 0.008 60);
+  --secondary-foreground: oklch(0.85 0.01 80);
+  --muted: oklch(0.16 0.006 60);
+  --muted-foreground: oklch(0.55 0.01 80);
+  --accent: oklch(0.75 0.14 82);
+  --accent-foreground: oklch(0.08 0.005 60);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.75 0.14 82);
+
+  /* 自定义金色变量 */
+  --gold: oklch(0.75 0.14 82);
+  --gold-dim: oklch(0.65 0.10 82);
+  --surface: oklch(0.13 0.008 60);
+  --surface-elevated: oklch(0.18 0.010 60);
+
+  --radius: 0.75rem;
+
+  /* Sidebar（不常用，保持一致）*/
+  --sidebar: oklch(0.10 0.006 60);
+  --sidebar-foreground: oklch(0.95 0.01 80);
+  --sidebar-primary: oklch(0.75 0.14 82);
+  --sidebar-primary-foreground: oklch(0.08 0.005 60);
+  --sidebar-accent: oklch(0.18 0.008 60);
+  --sidebar-accent-foreground: oklch(0.95 0.01 80);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.75 0.14 82);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Barlow', 'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  a[href] {
+    @apply cursor-pointer;
+  }
+
+  /* 全局滚动条美化 */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.75 0.14 82 / 40%);
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 480px; /* 移动端最大宽度 */
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  /* 金色渐变文字 */
+  .text-gold-gradient {
+    background: linear-gradient(135deg, oklch(0.82 0.16 85), oklch(0.65 0.10 75));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 金色边框卡片 */
+  .card-gold-border {
+    border: 1px solid oklch(0.75 0.14 82 / 20%);
+    background: oklch(0.13 0.008 60);
+    box-shadow: 0 4px 24px oklch(0 0 0 / 40%), inset 0 1px 0 oklch(0.75 0.14 82 / 10%);
+  }
+
+  /* 金色左竖条装饰 */
+  .card-gold-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 3px;
+    background: linear-gradient(180deg, oklch(0.82 0.16 85), oklch(0.65 0.10 75));
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* 按钮点击缩放效果 */
+  .btn-press {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .btn-press:active {
+    transform: scale(0.97);
+  }
+
+  /* iOS 底部安全区域 */
+  .pb-safe {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  /* 顶部安全区域 */
+  .pt-safe-top {
+    padding-top: max(3rem, env(safe-area-inset-top));
+  }
+
+  /* 隐藏滚动条但保留滚动功能 */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 卡片悬停效果 */
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px oklch(0 0 0 / 60%);
+  }
+
+  /* 金色闪光动画 */
+  @keyframes goldShimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(0.75 0.14 82) 0%,
+      oklch(0.88 0.18 90) 50%,
+      oklch(0.75 0.14 82) 100%
+    );
+    background-size: 200% auto;
+    animation: goldShimmer 3s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 脉冲动画 */
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(0.75 0.14 82 / 40%); }
+    50% { box-shadow: 0 0 0 8px oklch(0.75 0.14 82 / 0%); }
+  }
+
+  .pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+
+  /* 页面淡入动画 */
+  .page-enter {
+    animation: pageEnter 0.3s ease-out;
+  }
+
+  @keyframes pageEnter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 卡片入场动画 */
+  .card-enter {
+    animation: cardEnter 0.4s ease-out both;
+  }
+
+  @keyframes cardEnter {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* 金色脉冲光晕 */
+  .gold-glow {
+    box-shadow: 0 0 20px oklch(0.75 0.14 82 / 30%);
+  }
+
+  /* 毛玻璃效果 */
+  .glass {
+    background: oklch(0.13 0.008 60 / 80%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
